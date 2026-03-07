@@ -47,7 +47,7 @@ def serve_static(filename):
     return send_from_directory('.', filename)  # Serve JS, CSS, images, etc.
 
 # ---------------- GEMINI API SETUP ----------------
-client = genai.Client(api_key="AIzaSyDXnHw68dtptpPeyBzF3fGtXjmrrkuuFtc")
+client = genai.Client(api_key="AIzaSyCzUkDYbidxbiBRsQ-UaZ9lKjCv5XAxyMU")
 
 # ---------------- CHATBOT API ----------------
 @app.route("/chat", methods=["POST"])
