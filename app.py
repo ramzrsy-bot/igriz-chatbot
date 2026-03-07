@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, session, redirect
+from flask import Flask, request, jsonify, session, redirect, send_from_directory
 from flask_cors import CORS
 import os 
 import sqlite3
@@ -37,10 +37,14 @@ Office Timing: 8:30 AM – 1:30 PM (Monday to Friday)"""),
     )
     conn.commit()
 
-# ---------------- HOME ----------------
+# ---------------- HOME & STATIC FILE SERVING ----------------
 @app.route("/")
-def home():
-    return "IGRIZ Server Running"
+def serve_index():
+    return send_from_directory('.', 'index.html')  # Serve chat UI as default page
+
+@app.route("/<path:filename>")
+def serve_static(filename):
+    return send_from_directory('.', filename)  # Serve JS, CSS, images, etc.
 
 # ---------------- GEMINI API SETUP ----------------
 client = genai.Client(api_key="AIzaSyDXnHw68dtptpPeyBzF3fGtXjmrrkuuFtc")
