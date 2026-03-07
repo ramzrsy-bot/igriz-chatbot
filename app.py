@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, session, redirect
 from flask_cors import CORS
 import sqlite3
-from google import genai
+import google.genai as genai
 
 app = Flask(__name__)
 app.secret_key = "igriz_secret_key"
@@ -42,7 +42,7 @@ def home():
     return "IGRIZ Server Running"
 
 # ---------------- GEMINI API SETUP ----------------
-client = genai.Client(api_key="AIzaSyCAW4iEHr3TPyjc34Aif7WQPwewj_rm4Ss")
+client = genai.Client(api_key="AIzaSyDXnHw68dtptpPeyBzF3fGtXjmrrkuuFtc")
 
 # ---------------- CHATBOT API ----------------
 @app.route("/chat", methods=["POST"])
