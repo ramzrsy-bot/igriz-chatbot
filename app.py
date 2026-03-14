@@ -29,10 +29,9 @@ if cursor.fetchone()[0] == 0:
     cursor.executemany(
         "INSERT INTO college_info (keyword, response) VALUES (?, ?)",
         [
-            ("fees", """Fees can be paid in the college office.<br>
-Office Timing: 8:30 AM – 1:30 PM (Monday to Friday)"""),
-            ("admission", "Admission details are available in the admission office."),
-            ("department", "We offer BSc, BCom, BBA, BA and many departments.")
+            ("hi", "Hi 👋 Vanakkam! IGRIZ College Chatbot-ku welcome. Enna help venum?"),
+            ("hello", "Hello 😊 Ungaluku enna information venum college pathi?"),
+            ("thanks", "Welcome 😊 Vera help venumna kekkalam.")
         ]
     )
     conn.commit()
@@ -47,7 +46,7 @@ def serve_static(filename):
     return send_from_directory('.', filename)  # Serve JS, CSS, images, etc.
 
 # ---------------- GEMINI API SETUP ----------------
-client = genai.Client(api_key="AIzaSyCzUkDYbidxbiBRsQ-UaZ9lKjCv5XAxyMU")
+client = genai.Client(api_key="AIzaSyDSprpQS5VqCei767iKxh8vA9MgvRoagFE")
 
 # ---------------- CHATBOT API ----------------
 @app.route("/chat", methods=["POST"])
