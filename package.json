@@ -1,21 +1,25 @@
 {
   "name": "igrizcollegechatbot",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "description": "IGRIZ College Chatbot - Node.js serverless for Vercel",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vercel dev",
+    "start": "vercel dev"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ramzrsy-bot/igriz-chatbot.git"
   },
-  "keywords": [],
+  "keywords": ["chatbot", "college", "vercel", "mistral", "sqlite"],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/ramzrsy-bot/igriz-chatbot/issues"
-  },
-  "homepage": "https://github.com/ramzrsy-bot/igriz-chatbot#readme"
+  "dependencies": {
+    "sqlite3": "^5.1.6",
+    "sqlite": "^4.1.2",
+    "mistralai": "^1.0.0",
+    "micro": "^10.0.0",
+    "dotenv": "^16.0.0"
+  }
 }
