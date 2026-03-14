@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/app.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/chat", "dest": "api/app.py" },
+    { "src": "/login", "dest": "api/app.py" },
+    { "src": "/admin", "dest": "api/app.py" },
+    { "src": "/save", "dest": "api/app.py" },
+    { "src": "/delete", "dest": "api/app.py" },
+    { "src": "/logout", "dest": "api/app.py" },
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
